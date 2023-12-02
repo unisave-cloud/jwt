@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
+            Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{9656FA07-60AA-4A7D-B958-028FBD562DB1}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>UnisaveJWT</RootNamespace>
+        <AssemblyName>UnisaveJWT</AssemblyName>
+        <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="DefaultJsonSerializerFactory.cs" />
+        <Compile Include="JsonNetSerializer.cs" />
+        <Compile Include="JsonPropertyAttribute.cs" />
+        <Compile Include="JwtHeader.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs"/>
+
+        <Compile Include="..\..\src\JWT\Algorithms\CertificateAlgorithm.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\DelegateAlgorithmFactory.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\ECDSAAlgorithm.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\ECDSAAlgorithmFactory.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\ES256Algorithm.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\ES384Algorithm.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\ES512Algorithm.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\GenericAlgorithmFactory.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\HMACSHA256Algorithm.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\HMACSHA384Algorithm.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\HMACSHA512Algorithm.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\HMACSHAAlgorithm.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\HMACSHAAlgorithmFactory.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\IAlgorithmFactory.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\IAsymmetricAlgorithm.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\IJwtAlgorithm.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\JwtAlgorithmFactory.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\JwtAlgorithmName.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\NoneAlgorithm.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\RS1024Algorithm.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\RS2048Algorithm.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\RS256Algorithm.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\RS384Algorithm.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\RS4096Algorithm.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\RS512Algorithm.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\RSAlgorithm.cs"/>
+        <Compile Include="..\..\src\JWT\Algorithms\RSAlgorithmFactory.cs"/>
+
+        <Compile Include="..\..\src\JWT\Builder\ClaimName.cs"/>
+        <Compile Include="..\..\src\JWT\Builder\EnumExtensions.cs"/>
+        <Compile Include="..\..\src\JWT\Builder\HeaderName.cs"/>
+        <Compile Include="..\..\src\JWT\Builder\JwtBuilder.cs"/>
+        <Compile Include="..\..\src\JWT\Builder\JwtBuilderExtensions.cs"/>
+        <Compile Include="..\..\src\JWT\Builder\JwtData.cs"/>
+
+        <Compile Include="..\..\src\JWT\Exceptions\InvalidTokenPartsException.cs"/>
+        <Compile Include="..\..\src\JWT\Exceptions\SignatureVerificationException.cs"/>
+        <Compile Include="..\..\src\JWT\Exceptions\TokenExpiredException.cs"/>
+        <Compile Include="..\..\src\JWT\Exceptions\TokenNotYetValidException.cs"/>
+        
+        <Compile Include="..\..\src\JWT\Internal\EncodingHelper.cs"/>
+        <Compile Include="..\..\src\JWT\Internal\StringHelper.cs"/>
+        <Compile Include="..\..\src\JWT\Serializers\DelegateJsonSerializerFactory.cs"/>
+        <Compile Include="..\..\src\JWT\Serializers\IJsonSerializerFactory.cs"/>
+        
+        <Compile Include="..\..\src\JWT\IBase64UrlEncoder.cs"/>
+        <Compile Include="..\..\src\JWT\IDateTimeProvider.cs"/>
+        <Compile Include="..\..\src\JWT\IJsonSerializer.cs"/>
+        <Compile Include="..\..\src\JWT\IJwtDecoder.cs"/>
+        <Compile Include="..\..\src\JWT\IJwtEncoder.cs"/>
+        <Compile Include="..\..\src\JWT\IJwtValidator.cs"/>
+        <Compile Include="..\..\src\JWT\JwtBase64UrlEncoder.cs"/>
+        <Compile Include="..\..\src\JWT\JwtDecoderContext.cs"/>
+        <Compile Include="..\..\src\JWT\JwtDecoder.cs"/>
+        <Compile Include="..\..\src\JWT\JwtEncoder.cs"/>
+        <Compile Include="..\..\src\JWT\JwtParts.cs"/>
+        <Compile Include="..\..\src\JWT\JwtValidator.cs"/>
+        <Compile Include="..\..\src\JWT\UnixEpoch.cs"/>
+        <Compile Include="..\..\src\JWT\UtcDateTimeProvider.cs"/>
+        <Compile Include="..\..\src\JWT\ValidationParameters.cs"/>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>
